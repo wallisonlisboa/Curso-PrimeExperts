@@ -6,8 +6,8 @@ Library    Collections
 
 *** Variables ***
 # Minha primeira variável simples
-${NOME}       Wallison Lisboa
 
+${NOME}    wallison
 
 # Minha primeira variável tipo Dicionário
 

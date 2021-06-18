@@ -3,24 +3,29 @@
 Documentation    exercício de hoje: criar kayword que gera email
 ...              com o formato nome_sobrenome_idade@robot.com
 
+Library    Collections
+
+
+
 *** Variables ***
 ${NOME}        wallison
 ${SOBRENOME}   lisboa
 ${IDADE}       29
 
-*** Keywords ***
-
-Email criado "${EMAIL}"
-    [Arguments]        ${NOME}  ${SOBRENOME}  ${IDADE}
-
-    ${RESULTADO} =     Catenate    SEPARADOR=_    ${NOME}    ${SOBRENOME}    ${IDADE}
-    
-    [Return]          ${RESULTADO}@robot.com
-
-
 *** Test Cases ***
 
-Cenario: Imprimir E-mail no console
-    
-    Log To Console    ${RESULTADO}@robot.com
+Formando o Email
+    [Tags]            TEST_EMAIL
+    ${RESULTADO}      Criar email com argumentos abaixo "wallison" e "lisboa" e "29"
+    Log To Console    ${RESULTADO}
+
+*** Keywords ***
+Criar email com argumentos abaixo "${NOME}" e "${SOBRENOME}" e "${IDADE}"
+       
+
+    ${RESULTADO} =    Catenate    SEPARATOR=_   ${NOME}    ${SOBRENOME}    ${IDADE}
+    [Return]           ${RESULTADO}@robot.com
+
+   
+
     
