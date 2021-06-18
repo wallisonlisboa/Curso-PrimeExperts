@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.5 on win32)" generated="20210618 14:46:05.889" rpa="false" schemaversion="2">
+<suite id="s1" name="Webautomation" source="c:\Users\Barbara\Desktop\Curso-PrimeExperts\tests\webautomation.robot">
+<test id="s1-t1" name="Caso de Teste 03: Listar Produtos">
+<kw name="Abrir o navegador" library="kws_automation" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210618 14:46:06.305" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20210618 14:46:06.304" endtime="20210618 14:46:08.609"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210618 14:46:08.609" endtime="20210618 14:46:08.792"/>
+</kw>
+<status status="PASS" starttime="20210618 14:46:06.304" endtime="20210618 14:46:08.793"/>
+</kw>
+<kw name="Acessar a página home do site Automation Practice" library="kws_automation">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210618 14:46:08.795" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20210618 14:46:08.794" endtime="20210618 14:46:25.954"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="block_top_menu"]/ul</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210618 14:46:25.954" endtime="20210618 14:46:26.000"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210618 14:46:26.007" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210618 14:46:26.000" endtime="20210618 14:46:26.008"/>
+</kw>
+<status status="PASS" starttime="20210618 14:46:08.793" endtime="20210618 14:46:26.008"/>
+</kw>
+<kw name="Passar o mouse por cima da categoria &quot;Women&quot; no menu principal superior de categorias" library="kws_automation" sourcename="Passar o mouse por cima da categoria &quot;${CATEGORIA}&quot; no menu principal superior de categorias">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/a[@class="sf-with-ul"]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210618 14:46:26.010" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="block_top_menu"]/ul/li[1]/a[@class="sf-with-ul"]'.</msg>
+<status status="PASS" starttime="20210618 14:46:26.009" endtime="20210618 14:46:26.317"/>
+</kw>
+<status status="PASS" starttime="20210618 14:46:26.008" endtime="20210618 14:46:26.318"/>
+</kw>
+<kw name="Clicar na sub categoria &quot;Summer Dresses&quot;" library="kws_automation" sourcename="Clicar na sub categoria &quot;${SUBCATEGORY}&quot;">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a</arg>
+<arg>${SUBCATEGORY}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20210618 14:46:26.318" endtime="20210618 14:46:26.359"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210618 14:46:26.361" level="INFO">Clicking link 'xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a'.</msg>
+<status status="PASS" starttime="20210618 14:46:26.359" endtime="20210618 14:46:34.967"/>
+</kw>
+<status status="PASS" starttime="20210618 14:46:26.318" endtime="20210618 14:46:34.968"/>
+</kw>
+<kw name="Conferir se os produtos da sub-categoria &quot;Summer Dresses&quot; foram mostrados na página" library="kws_automation" sourcename="Conferir se os produtos da sub-categoria &quot;${CONFERIR_PRODUTOS}&quot; foram mostrados na página">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/h1/span[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210618 14:46:34.969" endtime="20210618 14:46:35.016"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/h1/span[2]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210618 14:46:35.016" endtime="20210618 14:46:35.047"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/ul/li[1]/div/div[2]/h5/a</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210618 14:46:35.047" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="center_column"]/ul/li[1]/div/div[2]/h5/a'.</msg>
+<status status="PASS" starttime="20210618 14:46:35.047" endtime="20210618 14:46:35.360"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/ul/li[2]/div/div[1]/div/a[1]/img</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210618 14:46:35.360" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="center_column"]/ul/li[2]/div/div[1]/div/a[1]/img'.</msg>
+<status status="PASS" starttime="20210618 14:46:35.360" endtime="20210618 14:46:35.672"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/ul/li[3]/div/div[1]/div/a[1]/img</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210618 14:46:35.672" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="center_column"]/ul/li[3]/div/div[1]/div/a[1]/img'.</msg>
+<status status="PASS" starttime="20210618 14:46:35.672" endtime="20210618 14:46:35.989"/>
+</kw>
+<status status="PASS" starttime="20210618 14:46:34.968" endtime="20210618 14:46:35.989"/>
+</kw>
+<kw name="Fechar o navegador" library="kws_automation" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210618 14:46:35.989" endtime="20210618 14:46:39.553"/>
+</kw>
+<status status="PASS" starttime="20210618 14:46:35.989" endtime="20210618 14:46:39.554"/>
+</kw>
+<status status="PASS" starttime="20210618 14:46:06.296" endtime="20210618 14:46:39.554"/>
+</test>
+<doc>Neste arquivo estarao presentes nossos primeiros fluxos
+de automação web e seus respectivos cenários automatizados.</doc>
+<status status="PASS" starttime="20210618 14:46:05.889" endtime="20210618 14:46:39.559"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Webautomation">Webautomation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
